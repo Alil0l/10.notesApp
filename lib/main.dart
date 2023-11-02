@@ -13,7 +13,9 @@ class NotesApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: HomePage.id,
-      routes: {HomePage.id: (context) => HomePage()},
+      routes: {
+        HomePage.id: (context) => HomePage(),
+      },
     );
   }
 }
