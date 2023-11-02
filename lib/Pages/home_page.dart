@@ -9,6 +9,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         actions: [Icon(Icons.search_rounded)],
         title: Text('Hello Notes'),
+        centerTitle: true,
       ),
       body: Container(),
       floatingActionButton: FloatingActionButton(
