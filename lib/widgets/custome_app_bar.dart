@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes/widgets/custome_icon_button.dart';
 
 class CustomeAppBar extends StatelessWidget {
   const CustomeAppBar({
@@ -13,13 +14,7 @@ class CustomeAppBar extends StatelessWidget {
       children: [
         Text('Notes',
             style: TextStyle(fontWeight: FontWeight.w400, fontSize: 28)),
-        Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              color: Color.fromARGB(255, 83, 83, 83),
-            ),
-            child:
-                IconButton(onPressed: () {}, icon: Icon(Icons.search_rounded)))
+        const CustomIconButton(icon: Icons.search_rounded)
       ],
     );
   }
