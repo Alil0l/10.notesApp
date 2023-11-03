@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:notes/Pages/home_page.dart';
+import 'package:flutter/services.dart';
+import 'package:notes/views/notes_view.dart';
 
 void main() {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+  //     overlays: [SystemUiOverlay.bottom]);
   runApp(NotesApp());
 }
 
@@ -12,9 +16,10 @@ class NotesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: HomePage.id,
+      theme: ThemeData(brightness: Brightness.dark),
+      initialRoute: NotesView.id,
       routes: {
-        HomePage.id: (context) => HomePage(),
+        NotesView.id: (context) => NotesView(),
       },
     );
   }
