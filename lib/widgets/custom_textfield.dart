@@ -2,11 +2,12 @@
 
 import 'package:flutter/material.dart';
 
-class CustomeFormTextField extends StatelessWidget {
-  CustomeFormTextField(
+class CustomeTextField extends StatelessWidget {
+  CustomeTextField(
       {super.key,
+      this.hrpadding = 0,
       this.hintText,
-      this.linesCount,
+      this.linesCount = 1,
       this.action,
       this.onChanged,
       required this.hidden});
@@ -14,18 +15,13 @@ class CustomeFormTextField extends StatelessWidget {
   int? linesCount;
   dynamic action;
   bool hidden;
+  double hrpadding;
   Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: TextFormField(
-        validator: (value) {
-          if (value!.isEmpty) {
-            return 'Requierd Field';
-          }
-          return null;
-        },
+      padding: EdgeInsets.symmetric(horizontal: hrpadding),
+      child: TextField(
         obscureText: hidden,
         maxLines: linesCount,
         onChanged: onChanged,
