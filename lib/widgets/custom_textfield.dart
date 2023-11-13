@@ -10,18 +10,28 @@ class CustomeTextField extends StatelessWidget {
       this.linesCount = 1,
       this.action,
       this.onChanged,
-      required this.hidden});
+      required this.hidden,
+      this.onSaved});
   String? hintText;
   int? linesCount;
   dynamic action;
   bool hidden;
   double hrpadding;
+  final void Function(String?)? onSaved;
   Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: hrpadding),
-      child: TextField(
+      child: TextFormField(
+        onSaved: onSaved,
+        validator: (value) {
+          if (value?.isEmpty ?? true) {
+            return 'Field is Requierd';
+          } else {
+            return null;
+          }
+        },
         obscureText: hidden,
         maxLines: linesCount,
         onChanged: onChanged,
