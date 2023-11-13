@@ -8,6 +8,7 @@ class CustomeAppBar extends StatelessWidget {
     required this.icon,
   });
   final String title;
+
   final IconData icon;
   @override
   Widget build(BuildContext context) {
