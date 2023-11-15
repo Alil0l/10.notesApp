@@ -40,7 +40,7 @@ class _EditNoteViewState extends State<EditNoteView> {
               },
               hidden: false,
               linesCount: 1,
-              hintText: 'Edit Title',
+              hintText: widget.note.title,
               action: TextInputAction.next),
           const SizedBox(height: 16),
           CustomeTextField(
@@ -49,7 +49,7 @@ class _EditNoteViewState extends State<EditNoteView> {
               },
               hidden: false,
               linesCount: 5,
-              hintText: 'Edit Content',
+              hintText: widget.note.subtitle,
               action: TextInputAction.done)
         ],
       ),
