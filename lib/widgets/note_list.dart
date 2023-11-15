@@ -20,7 +20,9 @@ class NoteList extends StatelessWidget {
           shrinkWrap: true,
           physics: BouncingScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
-            return NoteCard();
+            return NoteCard(
+              note: notes[index],
+            );
           },
         );
       },
