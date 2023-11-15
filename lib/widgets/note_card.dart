@@ -50,7 +50,9 @@ class NoteCard extends StatelessWidget {
                       fontFamily: 'Roboto',
                       fontWeight: FontWeight.w100)),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  note.delete();
+                },
                 icon: Icon(Icons.delete, size: 32),
               ),
             ),
