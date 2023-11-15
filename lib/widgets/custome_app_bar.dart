@@ -6,9 +6,10 @@ class CustomeAppBar extends StatelessWidget {
     super.key,
     required this.title,
     required this.icon,
+    this.onPressed,
   });
   final String title;
-
+  final void Function()? onPressed;
   final IconData icon;
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class CustomeAppBar extends StatelessWidget {
           children: [
             Text(title,
                 style: TextStyle(fontWeight: FontWeight.w400, fontSize: 28)),
-            CustomIconButton(icon: icon)
+            CustomIconButton(icon: icon, onPressed: onPressed)
           ],
         ),
         const SizedBox(height: 8),
